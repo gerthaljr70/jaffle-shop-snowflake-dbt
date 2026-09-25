@@ -1,0 +1,21 @@
+seeds:
+  - name: raw_customers
+    description: "Raw customer data from legacy app"
+    config:
+      column_types:
+        id: int
+        first_name: varchar(50)
+        last_name: varchar(50)
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_orders
+    config:
+      column_types:
+        id: int
+        user_id: int
+        order_date: date
+        status: varchar(20)
